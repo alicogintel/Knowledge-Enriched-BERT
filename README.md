@@ -1,5 +1,4 @@
-# Papers on bert with knowledge
-
+# Papers
 
 1. **K-BERT: Enabling Language Representation with Knowledge Graph** *AAAI2020 (Liu, Zhou et al. 2019)* [paper](https://arxiv.org/abs/1909.07606), [code](https://github.com/autoliuweijie/K-BERT)
 2. **Knowledge enhanced contextual word representations** *EMNLP2019 (Peters, Neumann et al. 2019)* [paper](https://arxiv.org/abs/1909.04164), [code](https://github.com/allenai/kb)
@@ -13,7 +12,16 @@
 10. **SenseBERT: Driving Some Sense into BERT** *arXiv2020 (Levine, Lenz et al. 2019)* [paper](https://arxiv.org/abs/1908.05646)
 11. **K-ADAPTER: Infusing Knowledge into Pre-Trained Models with Adapters** *arXiv2020 (Wang, Tang et al. 2020)* [paper](https://arxiv.org/abs/2002.01808)
 12. **Pre-trained Models for Natural Language Processing: A Survey** *arXiv2020 (Qiu, Sun et al. 2020)* *4.1 Knowledge-Enriched PTMs* [paper](https://arxiv.org/abs/2003.08271)
+13. **SciBERT: A Pretrained Language Model for Scientific Text** *EMNLP2019 (Beltagy, Lo et al. 2019)* [paper](https://arxiv.org/abs/1903.10676), [code](https://github.com/allenai/scibert/)
+14. **BioBERT: a pre-trained biomedical language representation model for biomedical text mining** *arXiv2019 (Lee, Yoon et al. 2020)*  [paper](https://arxiv.org/abs/1901.08746), [code](https://github.com/dmis-lab/biobert), [model](https://github.com/naver/biobert-pretrained)
+15. **Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks** *ACL2020 (Gururangan, Marasović et al. 2020)* [paper](https://arxiv.org/abs/2004.10964), [code](https://github.com/allenai/dont-stop-pretraining) 
 
-----
-* **SciBERT: A Pretrained Language Model for Scientific Text** [paper](https://arxiv.org/abs/1903.10676)
-* **BioBERT: a pre-trained biomedical language representation model for biomedical text mining** [paper](https://arxiv.org/abs/1901.08746)
+---
+* DeBERTa: Decoding-enhanced BERT with Disentangled Attention
+
+---
+
+# Blog
+
+1. [美团BERT的探索和实践](https://tech.meituan.com/2019/11/14/nlp-bert-practice.html)
+
