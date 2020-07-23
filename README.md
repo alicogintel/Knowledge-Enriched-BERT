@@ -18,32 +18,35 @@
 15. **Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks** *ACL2020 (Gururangan, Marasović et al. 2020)* [paper](https://arxiv.org/abs/2004.10964), [code](https://github.com/allenai/dont-stop-pretraining) 
 
 ---
-* DeBERTa: Decoding-enhanced BERT with Disentangled Attention
+TODO
 
+* DeBERTa: Decoding-enhanced BERT with Disentangled Attention *arXiv2020 (He, Liu et al. 2020)* [paper](https://arxiv.org/abs/2006.03654), [code](https://github.com/microsoft/DeBERTa)
+* StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding *ICLR2020 (Wang, Bi et al. 2020)* [paper](https://openreview.net/forum?spm=ata.13261165.0.0.70ad797aLr6IZC&id=BJgQ4lSFPH)
+* Symmetric Regularization based BERT for Pair-wise Semantic Reasoning *arXiv2019 (Xu, Cheng et al. 2019)* [paper](https://arxiv.org/abs/1909.03405)
+* SKEP: Sentiment Knowledge Enhanced Pre-training for Sentiment Analysis *ACL2020 (Tian, Gao et al. 2020)* [paper](https://arxiv.org/abs/2005.05635)
+* Barack’s Wife Hillary: Using Knowledge Graphs for Fact-Aware Language Modeling *ACL2019 (Logan, Liu et al. 2019)* [paper](https://www.aclweb.org/anthology/P19-1598/)
 ---
 
 # paper summary
 
 | Model | Knowledge | Objective | BERT Train |
 | ----- | :-------: | :-------: | :-------:  |
-| K-BERT(Liu, Zhou et al. 2019) | CNDBpedia, HowNet,MedicalKG |扩展BERT结构，引入三元组知识 |可以复用BERT参数，KG在fine-tune阶段加入 |
-| KnowBERT(Peters, Neumann et al. 2019) | Wikipedia,WordNet |联合训练BERT和实体链接任务 | 模块嵌入在BERT之中进行训练 |
-| KEPLER(Wang, Gao et al. 2019) | Wikipedia,WikiData |KG embedding和MLM联合学习 |使用RoBERTa初始化模型参数，再进行联合学习 |
-| BERT+KG embedding(Doc classifier)(Ostendorff, Bourgonje et al. 2019) | WikiData |BERT+KG Emb，文本分类 |Fine-tune |
-| ERNIE(THU)(Zhang, Han et al. 2019) | Wikipedia,WikiData |将entity embedding(TransE)和文本对齐，加入到模型中进行训练 |原有BERT训练任务基础上mask一些entity |
-| ERNIE(Baidu)(Sun, Wang et al. 2019) | Chinese Wikipedia, Baidu Baike, Baidu news, Baidu Tieba |通过mask短语和实体，迫使语言模型学习实体信息 |沿用BERT训练方式 |
-| BERT-MK(He, Zhou et al. 2019) | Unified Medical Language System |与ERNIE(THU)相同，修改了entity embedding的方式 |使用PubMed corpus对BERT Base fine-tune |
-| WKLM(Xiong, Du et al. 2019) | Wikipedia,WikiData |在BERT的基础上使用替换策略，将实体替换为同类型其他实体，并做二分类 |使用BERT初始化模型，降低实体的mask比率 |
-| LIBERT(Lauscher, Vulic et al. 2020) | WordNet |增加上下位词/同义词判断任务 |结合新任务from scratch训练 |
-| SenseBERT(Levine, Lenz et al. 2019) | WordNet |在masked word的基础上加入对WordNet中supersense的预测 |结合新任务from scratch训练 |
-| K-Adapter(Wang, Tang et al. 2020) | Wikipedia,Wikidata, Dependency parser |扩展BERT结构，通过关系分类任务加入fact知识，通过依存关系父节点预测加入linguistic知识 |在RoBERTa基础上对Adapter训练，以支持下游任务 |
-| SCIBERT(Beltagy, Lo et al. 2019) | Scientific Text,外部词典 |直接换scientific语料训练，并扩充词典 |新语料from scratch训练 |
-| BioBERT(Lee, Yoon et al. 2020) | biomedical语料和词典 |continue BERT train |continue BERT train |
+| 1. K-BERT(Liu, Zhou et al. 2019) | CNDBpedia, HowNet,MedicalKG |扩展BERT结构，引入三元组知识 |可以复用BERT参数，KG在fine-tune阶段加入 |
+| 2. KnowBERT(Peters, Neumann et al. 2019) | Wikipedia,WordNet |联合训练BERT和实体链接任务 | 模块嵌入在BERT之中进行训练 |
+| 3. KEPLER(Wang, Gao et al. 2019) | Wikipedia,WikiData |KG embedding和MLM联合学习 |使用RoBERTa初始化模型参数，再进行联合学习 |
+| 4. BERT+KG embedding(Doc classifier)(Ostendorff, Bourgonje et al. 2019) | WikiData |BERT+KG Emb，文本分类 |Fine-tune |
+| 5. ERNIE(THU)(Zhang, Han et al. 2019) | Wikipedia,WikiData |将entity embedding(TransE)和文本对齐，加入到模型中进行训练 |原有BERT训练任务基础上mask一些entity |
+| 6. ERNIE(Baidu)(Sun, Wang et al. 2019) | Chinese Wikipedia, Baidu Baike, Baidu news, Baidu Tieba |通过mask短语和实体，迫使语言模型学习实体信息 |沿用BERT训练方式 |
+| 7. BERT-MK(He, Zhou et al. 2019) | Unified Medical Language System |与ERNIE(THU)相同，修改了entity embedding的方式 |使用PubMed corpus对BERT Base fine-tune |
+| 8. WKLM(Xiong, Du et al. 2019) | Wikipedia,WikiData |在BERT的基础上使用替换策略，将实体替换为同类型其他实体，并做二分类 |使用BERT初始化模型，降低实体的mask比率 |
+| 9. LIBERT(Lauscher, Vulic et al. 2020) | WordNet |增加上下位词/同义词判断任务 |结合新任务from scratch训练 |
+| 10. SenseBERT(Levine, Lenz et al. 2019) | WordNet |在masked word的基础上加入对WordNet中supersense的预测 |结合新任务from scratch训练 |
+| 11. K-Adapter(Wang, Tang et al. 2020) | Wikipedia,Wikidata, Dependency parser |扩展BERT结构，通过关系分类任务加入fact知识，通过依存关系父节点预测加入linguistic知识 |在RoBERTa基础上对Adapter训练，以支持下游任务 |
+| 12. PTMs Survey | - | - | - |
+| 13. SCIBERT(Beltagy, Lo et al. 2019) | Scientific Text,外部词典 |直接换scientific语料训练，并扩充词典 |新语料from scratch训练 |
+| 14. BioBERT(Lee, Yoon et al. 2020) | biomedical语料和词典 |continue BERT train |continue BERT train |
+| 15. Pretraining(Gururangan et al. 2020) | - | - | - |
 
----
-
-* Pre-trained Models for Natural Language Processing: A Survey(Qiu, Sun et al. 2020)
-* Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks(Gururangan, Marasović et al. 2020)
 
 # paper details
 
