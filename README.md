@@ -24,7 +24,7 @@ TODO
 * StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding *ICLR2020 (Wang, Bi et al. 2020)* [paper](https://openreview.net/forum?spm=ata.13261165.0.0.70ad797aLr6IZC&id=BJgQ4lSFPH)
 * Symmetric Regularization based BERT for Pair-wise Semantic Reasoning *arXiv2019 (Xu, Cheng et al. 2019)* [paper](https://arxiv.org/abs/1909.03405)
 * SKEP: Sentiment Knowledge Enhanced Pre-training for Sentiment Analysis *ACL2020 (Tian, Gao et al. 2020)* [paper](https://arxiv.org/abs/2005.05635)
-* Barack’s Wife Hillary: Using Knowledge Graphs for Fact-Aware Language Modeling *ACL2019 (Logan, Liu et al. 2019)* [paper](https://www.aclweb.org/anthology/P19-1598/)
+* Barack’s Wife Hillary: Using Knowledge Graphs for Fact-Aware Language Modeling *ACL2019 (Logan, Liu et al. 2019)* [paper](https://www.aclweb.org/anthology/P19-1598/), [code](https://github.com/rloganiv/kglm-model)
 ---
 
 # paper summary
