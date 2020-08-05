@@ -16,13 +16,12 @@
 13. **SciBERT: A Pretrained Language Model for Scientific Text** *EMNLP2019 (Beltagy, Lo et al. 2019)* [paper](https://arxiv.org/abs/1903.10676), [code](https://github.com/allenai/scibert/)
 14. **BioBERT: a pre-trained biomedical language representation model for biomedical text mining** *arXiv2019 (Lee, Yoon et al. 2020)*  [paper](https://arxiv.org/abs/1901.08746), [code](https://github.com/dmis-lab/biobert), [model](https://github.com/naver/biobert-pretrained)
 15. **Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks** *ACL2020 (Gururangan, Marasović et al. 2020)* [paper](https://arxiv.org/abs/2004.10964), [code](https://github.com/allenai/dont-stop-pretraining) 
-
+16. **StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding** *ICLR2020 (Wang, Bi et al. 2020)* [paper](https://openreview.net/forum?spm=ata.13261165.0.0.70ad797aLr6IZC&id=BJgQ4lSFPH)
+17. **Symmetric Regularization based BERT for Pair-wise Semantic Reasoning** *arXiv2019 (Xu, Cheng et al. 2019)* [paper](https://arxiv.org/abs/1909.03405)
 ---
 TODO
 
 * DeBERTa: Decoding-enhanced BERT with Disentangled Attention *arXiv2020 (He, Liu et al. 2020)* [paper](https://arxiv.org/abs/2006.03654), [code](https://github.com/microsoft/DeBERTa)
-* StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding *ICLR2020 (Wang, Bi et al. 2020)* [paper](https://openreview.net/forum?spm=ata.13261165.0.0.70ad797aLr6IZC&id=BJgQ4lSFPH)
-* Symmetric Regularization based BERT for Pair-wise Semantic Reasoning *arXiv2019 (Xu, Cheng et al. 2019)* [paper](https://arxiv.org/abs/1909.03405)
 * SKEP: Sentiment Knowledge Enhanced Pre-training for Sentiment Analysis *ACL2020 (Tian, Gao et al. 2020)* [paper](https://arxiv.org/abs/2005.05635)
 * Barack’s Wife Hillary: Using Knowledge Graphs for Fact-Aware Language Modeling *ACL2019 (Logan, Liu et al. 2019)* [paper](https://www.aclweb.org/anthology/P19-1598/), [code](https://github.com/rloganiv/kglm-model)
 ---
@@ -46,7 +45,7 @@ TODO
 | 13. SCIBERT(Beltagy, Lo et al. 2019) | Scientific Text,外部词典 |直接换scientific语料训练，并扩充词典 |新语料from scratch训练 |
 | 14. BioBERT(Lee, Yoon et al. 2020) | biomedical语料和词典 |continue BERT train |continue BERT train |
 | 15. Pretraining(Gururangan et al. 2020) | - | - | - |
-
+| 16. StructBERT(Wang, Bi et al. 2020) | - | - | - |
 
 # paper details
 
@@ -355,6 +354,29 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 1. Domain-Adaptive Pretraining: 在相关领域的语料上继续预训练能够提高任务性能（不相关的领域语料还会降低性能）
 2. Task-Adaptive Pretraining: 在领域语料预训练的基础上进行任务语料的预训练，能够进一步提升性能；但是相同领域，不同任务的数据分布并不相同，不能够进行任务级别的迁移。
 3. Task-Adaptive Pretraining: 可以通过人工构造或KNN方法扩充任务相关语料，通过任务相关的预训练方式来提升模型效果。
+
+
+### StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding(Wang, Bi et al. 2020)
+(ICLR2019) [论文](https://openreview.net/forum?spm=ata.13261165.0.0.70ad797aLr6IZC&id=BJgQ4lSFPH)
+
+**摘要**
+
+通过修改预训练任务，优化BERT效果；在原有MASK LM语言模型任务的基础上，添加：
+1. Word Structural Objective: 对输入的3-gram进行shuffle，并在输出端要求模型还原正确词序
+2. Sentence Structural Objective: 对NSP任务进行扩展，预测 上下句，下上句，random三者之一
+
+通过不同粒度的语序，使得模型学到更强的表征能力
+
+![structBERT_model](resources/images/structBERT_model.JPG)
+
+### Symmetric Regularization based BERT for Pair-wise Semantic Reasoning(Xu, Cheng et al. 2019)
+(arXiv2019) [paper](https://arxiv.org/abs/1909.03405)
+
+**摘要**
+
+扩展预训练任务中的NSP任务。将句子间的关系扩展为DiffDoc, IsNext, IsPrev(以及更加细致的关系)
+
+![bert_pair_wise_semantic_reasoning](resources/images/bert_pair_wise_semantic_reasoning.JPG)
 
 
 # Blog
