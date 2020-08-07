@@ -18,6 +18,9 @@
 15. **Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks** *ACL2020 (Gururangan, Marasović et al. 2020)* [paper](https://arxiv.org/abs/2004.10964), [code](https://github.com/allenai/dont-stop-pretraining) 
 16. **StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding** *ICLR2020 (Wang, Bi et al. 2020)* [paper](https://openreview.net/forum?spm=ata.13261165.0.0.70ad797aLr6IZC&id=BJgQ4lSFPH)
 17. **Symmetric Regularization based BERT for Pair-wise Semantic Reasoning** *arXiv2019 (Xu, Cheng et al. 2019)* [paper](https://arxiv.org/abs/1909.03405)
+18. **Enhancing Pre-Trained Language Representations with Rich Knowledge for Machine Reading Comprehension** *ACL2019 (Yang, Wang et al. 2019)* [paper](https://www.aclweb.org/anthology/P19-1226/)
+19. **A Knowledge-Enhanced Pretraining Model for Commonsense Story Generation** *arXiv2020 (Guan, Huang et al. 2019)* [paper](https://arxiv.org/abs/2001.05139)
+
 ---
 TODO
 
@@ -49,7 +52,7 @@ TODO
 
 # paper details
 
-### K-BERT: Enabling Language Representation with Knowledge Graph(Liu, Zhou et al. 2019)
+### 1. K-BERT: Enabling Language Representation with Knowledge Graph(Liu, Zhou et al. 2019)
 (AAAI2020) [代码](https://github.com/autoliuweijie/K-BERT) [论文](https://arxiv.org/abs/1909.07606)
 
 **摘要**
@@ -86,7 +89,7 @@ seeing layer通过控制sentence tree中的token是否可见（在一个mask-sel
 * 不足2：没有对关联的三元组进行筛选，一词多义现象会引入噪音。另一方面，BERT级别的模型已经通过大量语料“学到”了、一些常见或者高频的潜在知识，这部分内容再显式的加进去是没有明显效果的。而且因为目前知识的选择相对简单，很容易将错误的信息作为知识带入，因此反而可能会带来负面的影响。
     > 举个例子 “天安门，位于，北京”这个三元组对于K-BERT的作用很小，因为“天安门”和“北京”在大规模预料中经常会共同出现，因此这两个词的embedding特别接近。而“阿斯匹林，减缓，肺内流“这种专业领域的知识，在大规模预料中很少共同出现，这类知识是对K-BERT有效的。
 
-### Knowledge enhanced contextual word representations(Peters, Neumann et al. 2019)
+### 2. Knowledge enhanced contextual word representations(Peters, Neumann et al. 2019)
 (EMNLP2019) [代码](https://github.com/allenai/kb), [论文](https://arxiv.org/abs/1909.04164)
 
 **摘要**
@@ -113,7 +116,7 @@ KAR是插入在BERT内部层之间的。模型的输入是上一层BERT(Transfor
 
 本文通过把BERT与实体链接模型进行联合训练，以端到端的方式集成了实体的相关信息。联合学习过程虽然可以引入实体的信息，但相应的，也会依赖实体链接组件，带来额外的开销与错误，并且不易推广到广义的结构化知识。
 
-### KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation(Wang, Gao et al. 2019)
+### 3. KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation(Wang, Gao et al. 2019)
 
 (arXiv2019) [论文](https://arxiv.org/abs/1911.06136)
 
@@ -131,7 +134,7 @@ KAR是插入在BERT内部层之间的。模型的输入是上一层BERT(Transfor
 
 本文方法本质上是多任务学习，对Knowledge embedding和Masked language model同时学习。但执行过程，更多的是语言模型为knowledge embedding任务进行增强，而knowledge embedding任务对语言模型的没有直接的提供帮助。
 
-### Enriching BERT with Knowledge Graph Embeddings for Document Classification(Ostendorff, Bourgonje et al. 2019)
+### 4. Enriching BERT with Knowledge Graph Embeddings for Document Classification(Ostendorff, Bourgonje et al. 2019)
 
 (arXiv2019) [代码](https://github.com/malteos/pytorch-bert-document-classification), [论文](https://arxiv.org/abs/1909.08402)
 
@@ -145,7 +148,7 @@ KAR是插入在BERT内部层之间的。模型的输入是上一层BERT(Transfor
 3.	特征信息简单拼接，直接分类。
 
 
-### ERNIE: Enhanced Language Representation with Informative Entities(Zhang, Han et al. 2019)
+### 5. ERNIE: Enhanced Language Representation with Informative Entities(Zhang, Han et al. 2019)
 
 (ACL2019) [代码](https://github.com/thunlp/ERNIE), [论文](https://arxiv.org/abs/1905.07129)
 
@@ -181,7 +184,7 @@ KAR是插入在BERT内部层之间的。模型的输入是上一层BERT(Transfor
 本文借鉴了BERT预训练模型的思路来构建ERNIE模型，可以简单看为BERT+TransE的预训练模型。ERNIE模型是针对通用领域的知识增强预训练语言模型。该方法的效果要以大量的knowledge graph数据为前提。
 
 
-### ERNIE: Enhanced Representation through Knowledge Integration(Sun, Wang et al. 2019)
+### 6. ERNIE: Enhanced Representation through Knowledge Integration(Sun, Wang et al. 2019)
 
 (ACL2019) [代码](https://github.com/PaddlePaddle/ERNIE), [论文](https://arxiv.org/abs/1904.09223)
 
@@ -208,7 +211,7 @@ ERNIE和BERT的关联非常强，简单的通过masking机制，把短语和实�
 方法简单，效果比较明显，依赖大规模语料，只能提升对实体信息的关注，不能引入更复杂的结构化知识。
 (ERNIE2.0是一个通过多任务增量学习的预训练学习框架，和knowledge+BERT关系不大)
 
-### Integrating Graph Contextualized Knowledge into Pre-trained Language Models(He, Zhou et al. 2019)
+### 7. Integrating Graph Contextualized Knowledge into Pre-trained Language Models(He, Zhou et al. 2019)
 
 (arXiv2019) [论文](https://arxiv.org/abs/1912.00147)
 
@@ -230,7 +233,7 @@ ERNIE和BERT的关联非常强，简单的通过masking机制，把短语和实�
 ![BERT-MK vs MedERNIE](resources/images/bert_mk_vs_thu_ernie.JPG)
 
 
-### PRETRAINED ENCYCLOPEDIA: WEAKLY SUPERVISED KNOWLEDGE-PRETRAINED LANGUAGE MODEL(Xiong, Du et al. 2019)
+### 8. PRETRAINED ENCYCLOPEDIA: WEAKLY SUPERVISED KNOWLEDGE-PRETRAINED LANGUAGE MODEL(Xiong, Du et al. 2019)
 
 (ICLR2020) [论文](https://arxiv.org/abs/1912.09637)
 
@@ -254,7 +257,7 @@ ERNIE和BERT的关联非常强，简单的通过masking机制，把短语和实�
 
 
 
-### Specializing Unsupervised Pretraining Models for Word-Level Semantic Similarity(Lauscher, Vulic et al. 2020)
+### 9. Specializing Unsupervised Pretraining Models for Word-Level Semantic Similarity(Lauscher, Vulic et al. 2020)
 (arXiv2020) [论文](https://arxiv.org/abs/1909.02339)
 
 **摘要**
@@ -275,7 +278,7 @@ ERNIE和BERT的关联非常强，简单的通过masking机制，把短语和实�
 本文的方法是一个结合了对同义词，上下位词预测的多任务联合学习模型。相当于引入了词法知识，这种知识是语义理解层面的知识，不是特定领域下的知识，而且为引入词法知识构建的训练样本比原始文本短很多，这样对模型的影响文中没有说明。
 
 
-### SenseBERT: Driving Some Sense into BERT(Levine, Lenz et al. 2019)
+### 10. SenseBERT: Driving Some Sense into BERT(Levine, Lenz et al. 2019)
 (arXiv2020) [论文](https://arxiv.org/abs/1908.05646)
 
 **模型结构**
@@ -289,7 +292,7 @@ ERNIE和BERT的关联非常强，简单的通过masking机制，把短语和实�
 本文是一个引入词法信息的多任务学习模型，比较方便的一点是WordNet中的supersense可以直接作为训练数据引入。
 
 
-### K-ADAPTER: Infusing Knowledge into Pre-Trained Models with Adapters(Wang, Tang et al. 2020)
+### 11. K-ADAPTER: Infusing Knowledge into Pre-Trained Models with Adapters(Wang, Tang et al. 2020)
 (arXiv2020) [论文](https://arxiv.org/abs/2002.01808)
 	
 **摘要**
@@ -316,14 +319,14 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 本文为预训练引入知识提供了灵活的解决方案，adapter-base的结构可以在原有的预训练语言模型的基础上添加各种类型的知识，adapter的模型结构修改也比较方便，训练仅对adapter的参数进行。
 
 
-### Pre-trained Models for Natural Language Processing: A Survey(Qiu, Sun et al. 2020)
+### 12. Pre-trained Models for Natural Language Processing: A Survey(Qiu, Sun et al. 2020)
 (arXiv2020) [论文](https://arxiv.org/abs/2003.08271)
 
 **小结**
 
 关于PTMs的综述，4.1 Knowledge-Enriched PTMs
 
-### SCIBERT: A Pretrained Language Model for Scientific Text(Beltagy, Lo et al. 2019)
+### 13. SCIBERT: A Pretrained Language Model for Scientific Text(Beltagy, Lo et al. 2019)
 (EMNLP2019) [代码](https://github.com/allenai/scibert/) [论文](https://arxiv.org/abs/1903.10676)
 
 **摘要**
@@ -332,7 +335,7 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 2.	加入外部词典
 （细节：直接训练长句子会非常的慢，本文首先设置max_length=128 tokens，训练到loss停止下降，再训练能够处理长句子的模型(512tokens)）
 
-### BioBERT: a pre-trained biomedical language representation model for biomedical text mining(Lee, Yoon et al. 2020)
+### 14. BioBERT: a pre-trained biomedical language representation model for biomedical text mining(Lee, Yoon et al. 2020)
 (arXiv2019) [代码](https://github.com/dmis-lab/biobert), [论文](https://arxiv.org/abs/1901.08746), [预训练模型](https://github.com/naver/biobert-pretrained)
 
 
@@ -343,7 +346,7 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 1. 使用biomedical语料Pretrain BERT模型（使用google bert进行BERT参数初始化）
 2. 加入biomedical词典
 
-### Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks(Gururangan, Marasović et al. 2020)
+### 15. Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks(Gururangan, Marasović et al. 2020)
 (ACL2020) [代码](https://github.com/allenai/dont-stop-pretraining), [论文](https://arxiv.org/abs/2004.10964)
 
 **摘要**
@@ -356,7 +359,7 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 3. Task-Adaptive Pretraining: 可以通过人工构造或KNN方法扩充任务相关语料，通过任务相关的预训练方式来提升模型效果。
 
 
-### StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding(Wang, Bi et al. 2020)
+### 16. StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding(Wang, Bi et al. 2020)
 (ICLR2019) [论文](https://openreview.net/forum?spm=ata.13261165.0.0.70ad797aLr6IZC&id=BJgQ4lSFPH)
 
 **摘要**
@@ -369,7 +372,7 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 
 ![structBERT_model](resources/images/structBERT_model.JPG)
 
-### Symmetric Regularization based BERT for Pair-wise Semantic Reasoning(Xu, Cheng et al. 2019)
+### 17. Symmetric Regularization based BERT for Pair-wise Semantic Reasoning(Xu, Cheng et al. 2019)
 (arXiv2019) [paper](https://arxiv.org/abs/1909.03405)
 
 **摘要**
@@ -377,6 +380,45 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 扩展预训练任务中的NSP任务。将句子间的关系扩展为DiffDoc, IsNext, IsPrev(以及更加细致的关系)
 
 ![bert_pair_wise_semantic_reasoning](resources/images/bert_pair_wise_semantic_reasoning.JPG)
+
+
+### 18. Enhancing Pre-Trained Language Representations with Rich Knowledge for Machine Reading Comprehension(Yang, Wang et al. 2019)
+(ACL2019) [paper](https://www.aclweb.org/anthology/P19-1226/)
+
+**摘要**
+
+利用知识提升BERT，来解决机器阅读理解任务。
+
+![KT-NET](resources/images/KT_NET_model.JPG)
+
+注：方法说明，隐去了很多细节。
+
+1. 对于文本中的每个token s_i，可通过BERT得到编码 h_i
+2. 对于文本中的每个token s_i，可在知识库中找到一些相关的concepts C(s_i)
+3. 将C(s_i)中的每个concept c_j 与 h_i 结合计算，每个concept的权重，通过加权求和得到s_i 对应的知识信息 k_i
+4. 拼接 `[h_i, k_i]` 得到token s_i的知识增强表示 u_i
+5. (Self-Matching layer)根据每个token的知识增强表示 u_i 计算token之间的交互关系: 利用attention机制，对其余token的知识增强表示加权求和
+6. 并把知识增强表示，交互表示，间接交互表示拼接作为token最终的表示。
+
+
+
+### 19. A Knowledge-Enhanced Pretraining Model for Commonsense Story Generation (Guan, Huang et al. 2019)
+(arXiv2020) [paper](https://arxiv.org/abs/2001.05139)
+
+**摘要**
+
+
+![Commonsense Knowledge, story generate](resources/images/kg_enhance_story_gen_model.JPG)
+
+引入知识增强GPT语言模型，用于故事生成。
+
+主要分为三个阶段
+1. GPT预训练语言模型的训练。
+2. 将ConceptNet和ATOMIC中的三元组知识转化(以模板的方式)为句子，并通过在这些句子上最小化(negative likelihood of predicting the next token)
+3. 多任务学习
+
+![part2](resources/images/kg_enhance_story_gen_model_part2.JPG)
+
 
 
 # Blog
