@@ -20,6 +20,7 @@
 17. **Symmetric Regularization based BERT for Pair-wise Semantic Reasoning** *arXiv2019 (Xu, Cheng et al. 2019)* [paper](https://arxiv.org/abs/1909.03405)
 18. **Enhancing Pre-Trained Language Representations with Rich Knowledge for Machine Reading Comprehension** *ACL2019 (Yang, Wang et al. 2019)* [paper](https://www.aclweb.org/anthology/P19-1226/)
 19. **A Knowledge-Enhanced Pretraining Model for Commonsense Story Generation** *arXiv2020 (Guan, Huang et al. 2019)* [paper](https://arxiv.org/abs/2001.05139)
+20. **E-BERT: A Phrase and Product Knowledge Enhanced Language Model for E-commerce** *arXiv2020 (Zhang, Yuan et al. 2020)* [paper](https://arxiv.org/abs/2009.02835)
 
 ---
 TODO
@@ -49,6 +50,7 @@ TODO
 | 14. BioBERT(Lee, Yoon et al. 2020) | biomedical语料和词典 |continue BERT train |continue BERT train |
 | 15. Pretraining(Gururangan et al. 2020) | - | - | - |
 | 16. StructBERT(Wang, Bi et al. 2020) | - | - | - |
+| 20. E-BERT(Zhang, Yuan et al. 2020) | [电商语料](https://nijianmo.github.io/amazon/index.html) ，电商短语( [抽取](https://github.com/shangjingbo1226/AutoPhrase) )，关联商品 | 动态进行word(char) mask和phrase mask，拉近关联商品表示 | continue-train |
 
 # paper details
 
@@ -419,7 +421,15 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 
 ![part2](resources/images/kg_enhance_story_gen_model_part2.JPG)
 
+### 20. E-BERT: A Phrase and Product Knowledge Enhanced Language Model for E-commerce
 
+短语和关联商品作为知识提升BERT
+
+主要有两点工作：
+1. AHM，word mask和phrase mask，随时间变化，将任务由word(char) mask变为phrase mask
+2. NPR，拉进两个相关商品的表示: 利用BERT对商品进行编码，通过相互注意力重构编码，并使得重构的编码尽可能的接近
+
+![e-bert, Neighbor Product Reconstruction](resources/images/ebert_npr.JPG)
 
 # Blog
 
