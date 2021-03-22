@@ -21,6 +21,10 @@
 18. **Enhancing Pre-Trained Language Representations with Rich Knowledge for Machine Reading Comprehension** *ACL2019 (Yang, Wang et al. 2019)* [paper](https://www.aclweb.org/anthology/P19-1226/)
 19. **A Knowledge-Enhanced Pretraining Model for Commonsense Story Generation** *arXiv2020 (Guan, Huang et al. 2019)* [paper](https://arxiv.org/abs/2001.05139)
 20. **E-BERT: A Phrase and Product Knowledge Enhanced Language Model for E-commerce** *arXiv2020 (Zhang, Yuan et al. 2020)* [paper](https://arxiv.org/abs/2009.02835)
+21. **LUKE: Deep Contextualized Entity Representations with Entity-aware Self-attention** *emnlp2020 (Yamada, Asai et al. 2020)* [paper](https://www.aclweb.org/anthology/2020.emnlp-main.523.pdf), [code](https://github.com/studio-ousia/luke)
+22. **Pre-training Entity Relation Encoder with Intra-span and Inter-span Information** *emnlp2020 (Wang, Sun et al. 2020)* [paper](https://www.aclweb.org/anthology/2020.emnlp-main.132.pdf)
+23. **ERICA: Improving Entity and Relation Understanding for Pre-trained Language Models via Contrastive Learning** *arXiv2020 (Qin, Lin et al. 2020)* [paper](https://arxiv.org/pdf/2012.15022.pdf)
+24. **KgPLM: Knowledge-guided Language Model Pre-training via Generative and Discriminative Learning** *arXiv2020 (He, Jiang et al. 2020)* [paper](https://arxiv.org/pdf/2012.03551v1.pdf)
 
 ---
 TODO
@@ -51,6 +55,9 @@ TODO
 | 15. Pretraining(Gururangan et al. 2020) | - | - | - |
 | 16. StructBERT(Wang, Bi et al. 2020) | - | - | - |
 | 20. E-BERT(Zhang, Yuan et al. 2020) | [电商语料](https://nijianmo.github.io/amazon/index.html) ，电商短语( [抽取](https://github.com/shangjingbo1226/AutoPhrase) )，关联商品 | 动态进行word(char) mask和phrase mask，拉近关联商品表示 | continue-train |
+| 21. LUKE(Yamada, Asai et al. 2020) | entity-annotated wikipedia | entity-aware attention(sentence加入实体，修改attention score计算方式)，entity mask还原 | - |
+| 23. ERICA(Qin, Lin et al. 2020) | from wikipedia, wikidata | entity discrimination+relation discrimination 思路类似负采样 | - |
+| 24. KgPLM(He, Jiang et al. 2020) | wikipedia, wikidata | mlm+ 替换错误token判别 | init from RoBERTaBASE|
 
 # paper details
 
@@ -434,3 +441,6 @@ Adapter的实现方式有很多种，本文设计了一种支持插拔的knowled
 # Blog
 
 1. [美团BERT的探索和实践](https://tech.meituan.com/2019/11/14/nlp-bert-practice.html)
+
+# References
+
